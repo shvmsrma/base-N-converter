@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<title>Converter - by Shivam Sharma</title>
+<style type="text/css">
+	div{
+		color:#d1cecb; 
+	position: absolute;
+	top: 200px;
+	left : 400px;
+	padding-top:100;px;
+    padding-left: 100px;
+    padding-bottom: 100px;
+    padding-right: 100px;
+    border: groove;
+    display: inline-block;
+    text-align: center;
+    font-family: Bahnschrift;
+    text-decoration-color: red;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50%;
+    -webkit-box-shadow: 10px 10px 5px 2px rgba(168,158,168,1);
+    -moz-box-shadow: 10px 10px 5px 2px rgba(168,158,168,1);
+    box-shadow: 10px 10px 5px 2px rgba(168,158,168,1);
+}
+h1{
+	color: red;
+	text-align: center;
+
+}
+
+
+
+
+
+
+
+
+</style>
+
+
+</head>
+<body>
+		<h1> Converter</h1>
+
+	<div ng-app="myApp" ng-controller="hexCtrl">
+		<p>This input takes decimal: <input type="text" ng-model="decimal"></p>
+		<p>Enter the Base: <input type="text" ng-model="base"></p>
+		Converted Number : {{conv()}}
+		
+</div>
+
+<script>
+var app = angular.module("myApp", []);
+
+
+app.controller('hexCtrl',function($scope) {
+    // Initialize initial values.
+    $scope.decimal = 0;
+    $scope.base=0;
+    $scope.conv=0;
+    $scope.conv=function(){
+    	return Number($scope.decimal).toString($scope.base)
+
+    }
+
+  });  
+
+</script>
+</body>
+</html>
